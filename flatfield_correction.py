@@ -24,8 +24,8 @@ argparser.add_argument(
     type=int,
     default=1,
     help="controls which frame is taken from each time-lapse tiff to use for " \
-        "estimating the flatfield illumination. Default is 0, i.e. the first " \
-        "frame in the stack."
+        "estimating the flatfield illumination. Ignored if --single_image " \
+        "is used. Default is 0, i.e. the first frame in the stack."
 )
 argparser.add_argument(
     "--channel",
@@ -52,7 +52,7 @@ argparser.add_argument(
     default="uniform",
     choices=["uniform", "gaussian"],
     help="method used to blur the average flatfield image, ignored if " \
-        "dont_blur is True. Default is 'uniform'."
+        "dont_blur is specified. Default is 'uniform'."
 )
 argparser.add_argument(
     "--uniform_size",
