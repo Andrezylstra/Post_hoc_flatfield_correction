@@ -204,7 +204,8 @@ mean_image = np.mean(image_stack, axis=2)
 # Smooth/blur the estimated illumination image
 if not dont_blur:
     if edge_mode not in ("reflect", "mirror", "nearest"):
-        err_msg = f"Unknown edge_mode: {edge_mode}."
+        err_msg = f"Unknown edge_mode: {edge_mode}. Possible values are " \
+            "'reflect', 'mirror', and 'nearest'."
         raise ValueError(err_msg)
 
     if blur_method == 'gaussian':
@@ -220,7 +221,8 @@ if not dont_blur:
             mode=edge_mode
             )
     else:
-        err_msg = f"Unknown blur_method value: {blur_method}."
+        err_msg = f"Unknown blur_method value: {blur_method}. Posssible " \
+            "values are 'gaussian' and 'uniform'."
         raise ValueError(err_msg)
 else:
     est_illum = mean_image
@@ -233,7 +235,8 @@ if output_format == "16bit":
 elif output_format == "32bit":
     out_type = np.uint32
 else:
-    err_msg = f"Unknown output_format: {output_format}"
+    err_msg = f"Unknown output_format: {output_format}. Possible values are " \
+        "'16bit' and '32bit'."
     raise ValueError(err_msg)
 
 # Save the estimated illumination image
