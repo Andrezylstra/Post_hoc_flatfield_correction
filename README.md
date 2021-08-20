@@ -8,6 +8,8 @@ A Python script for post hoc estimation and correction of uneven illumination in
 
 The script first estimates the distribution of illumination by taking the mean pixel intensity across a sample set of images. It then optionally blurs this estimated image and uses it to calculate a per-pixel correction factor. This matrix of correction factors is (optionally) subsequently multiplied by every frame (in the relevant channel) across input images.
 
+If input images are single images, all frames will be used to estimate the illumination. If input images are time-lapse stacks, a single frame is taken from each instead. All frames are corrected depending on options chosen.
+
 ## Caveats
 
 This method will likely never be as good as testing and correcting for for uneven illumination before performing the experiment (e.g. by capturing images of a fluorescent dye). However, it may be a viable option under some circumstances, particularly where there is no inherent structure in the input images e.g. microfluidic channels or cell clustering locations across input files. Sparser images, ones where the majority of each image is 'background', will also likely be handled better.
