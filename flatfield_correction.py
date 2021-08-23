@@ -12,7 +12,7 @@ argparser.add_argument("input_folder")
 argparser.add_argument("output_folder")
 argparser.add_argument(
     "--as_single",
-    help="treat input images as single time point images. Only single channel" \
+    help="treat input images as single time point images. Only single channel " \
         "images are accepted in this mode. If not set (default), the 1st " \
         "dimension in image data is treated as the frame index in a time " \
         "series. Any fourth dimension will be interpreted as different " \
@@ -31,7 +31,7 @@ argparser.add_argument(
     "--channel",
     type=int,
     default=0,
-    help="controls which channel will be used to estimate the illumination" \
+    help="controls which channel will be used to estimate the illumination " \
         "image. Default is 0, i.e. the first channel."
 )
 argparser.add_argument(
