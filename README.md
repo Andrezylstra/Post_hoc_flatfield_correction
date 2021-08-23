@@ -43,7 +43,7 @@ Optional arguments:
 - `--gaussian_sigma` : controls the width of the gaussian blur filter. Larger values will result in a blurrier estimated illumination image. Ignored if `--dont_blur` is specified or `--blur_method` is 'uniform'. Default is 10.
 
 - `--edge_mode` : determines the mode for handling blurring at the edges of images. Ignored if `--dont_blur` is specified. Default is 'reflect'.
-    - 'reflect' : he input is extended by reflecting about the edge of the last pixel.
+    - 'reflect' : the input is extended by reflecting about the edge of the last pixel.
     - 'nearest' : the input is extended by replicating the last pixel.
     - 'mirror' : the input is extended by reflecting about the center of the last pixel.
 
