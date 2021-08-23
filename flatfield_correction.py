@@ -287,7 +287,7 @@ if not dont_correct:
         imsave(out_paths[i], im, check_contrast=False)
 
 # Write a record of processing (just for info, not intended to help debugging)
-datetime_str = datetime.now().strftime("%d-%m-%Y_%H:%M")
+datetime_str = datetime.now().strftime("%d-%m-%Y_%H%M")
 log_path = os.path.join(out_dir, f"{datetime_str}_log.txt")
 with open(log_path, "w+") as f:
     f.write(f"Flatfield correction completed at {datetime_str}.\n\n")
